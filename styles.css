@@ -13,6 +13,7 @@ body {
     background-image: url('images/pattern-background-mobile.svg');
     background-repeat: no-repeat;
     background-color: var(--paleBlue);
+    background-size: contain;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,6 +74,7 @@ body {
     text-decoration: underline;
     color: var(--brightBlue);
     font-weight: 700;
+    transition: all 0.3s ease-in;
 }
 .card-component .payment-button {
     width: 279px;
@@ -87,12 +89,53 @@ body {
     border-radius: 11px;
     margin-bottom: 21px;
     box-shadow: 0px 20px 20px rgba(13, 48, 189, 15%);
+    transition: background-color 0.3s ease-out;
 }
 .card-component .cancel-order {
     font-family: 15px;
     font-family: var(--redHatDisplay);
     font-weight: 900;
     color: var(--desaturatedBlue);
-    /* margin-top: 24px; */
     margin-bottom: 32px;
+    transition: color 0.3s ease-out;
+}
+@media screen and (min-width: 1440px) {
+    body {
+        background-image: url('images/pattern-background-desktop.svg');
+        background-size: contain;
+    }
+    .card-component {
+        margin: 102px 495px;
+        width: 450px;
+    }
+    .card-component h1 {
+        font-size: 28px;
+        margin: 45px 48px 16px 48px;
+    }
+    .card-component p {
+        font-size: 16px;
+        margin: 0 48px 20px 48px;
+    }
+    .card-component .plan-overview {
+        width:  354px;
+    }
+    .plan-overview p {
+        margin: 0 94px 0 0;
+    }
+    .card-component .payment-button {
+        width: 354px;
+    }
+    .plan-overview .change-plan:hover {
+        text-decoration: none;
+        cursor: pointer;
+        color: #766CF1;
+    }
+    .card-component .payment-button:hover {
+        background-color: #766CF1;
+        cursor: pointer;
+    }
+    .card-component .cancel-order:hover {
+        color: #1F2E55;
+        cursor: pointer;
+    }
 }
